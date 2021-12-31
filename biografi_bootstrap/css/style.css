@@ -1,0 +1,23 @@
+.jumbotron {
+	padding-top: 4rem;
+	background: linear-gradient(0deg, rgb(0, 177, 195) 0%, rgb(164, 212, 160) 80%);
+	
+}
+
+.nav-item a {
+	color: white;
+}
+
+.nav-item a:hover {
+	color: rgb(0, 177, 195);
+	background-color: #fff;
+}
+
+h1 {
+	padding-top: 30px;
+}
+
+#education {
+	padding-top: 150px;
+}
+
