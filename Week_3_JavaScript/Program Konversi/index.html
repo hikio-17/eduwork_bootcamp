@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Program Konversi Nilai</title>
+</head>
+ 
+<h3>Silahkan Input Nilai Anda Di Bawah ini</h3>
+<form >
+  <input type="text" id="input_form" placeholder="inputkan nilai anda"/>
+  <button id="tombol_form">Tampilkan Nilai</button>
+</form>
+ 
+ 
+<script>
+document.getElementById("tombol_form").
+addEventListener("click", tampilkan_nilai_form);
+ 
+function tampilkan_nilai_form(){
+    var nilai=document.getElementById("input_form").value;
+        if (nilai >= 80 && nilai <= 100) {
+      alert("Nilai anda A");
+    } else if (nilai >= 60 && nilai < 80) {
+      alert("Nilai anda B");
+    } else if (nilai >= 40 && nilai < 60) {
+      alert("Nilai anda C");
+    } else if (nilai >= 20 && nilai < 60) {
+      alert("Nilai anda D");
+    } else {
+      alert("Nilai anda E");
+}
+    document.getElementById("input_form").innerHTML=nilai_form;
+}
+</script>
+</html>
