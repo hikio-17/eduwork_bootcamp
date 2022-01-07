@@ -9,8 +9,8 @@ let ronde = 1;
 let stop = true;
 
 while (stop) {
-  let p1 = document.getElementById('inputan1').value;
-  let p2 = document.getElementById('inputan2').value;
+  let p1 = parseInt(prompt("Player 1: masukan angka"));
+  let p2 = parseInt(prompt("Player 2: masukan angka"));
 
   let random = getRandom();
   let ulangi = validasi(p1, p2);
