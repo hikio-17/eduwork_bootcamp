@@ -39,8 +39,7 @@ while (stop) {
     ronde++;
     if (ronde <= 5) {
       stop = window.confirm("Ronde " + ronde + "?");
-    } else {
-      if (skorP1 > skorP2) {
+    } else if (skorP1 > skorP2) {
         alert("Good Jobs Player 1");
         stop = false;
       } else if (skorP1 < skorP2) {
@@ -55,7 +54,7 @@ while (stop) {
       }
     }
   }
-}
+  
 
 function validasi(player1, player2) {
   if (player1 === player2) {
