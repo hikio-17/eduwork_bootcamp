@@ -1,4 +1,4 @@
-class biodata {
+class data {
     constructor(nama, email, Telp) {
         this.nama = nama;
         this.email = email;
@@ -11,4 +11,4 @@ class biodata {
     }
 }
 
-export { biodata };
+export { data };
