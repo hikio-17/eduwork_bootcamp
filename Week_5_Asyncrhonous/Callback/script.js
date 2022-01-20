@@ -1,30 +1,33 @@
 const table = document.getElementById("data");
 table.innerHTML = loading();
+const xhr = new XMLHttpRequest();
 
-fetch("https://jsonplaceholder.typicode.com/users")
-  .then((res) => res.json())
-  .then((res) => {
-    table.innerHTML = render(res);
-  });
-
-function render(callback) {
-  let table = "";
-  callback.forEach((data) => {
-    table += `<tr>
-                <td>${data.id}</td>
-                <td>${data.name}</td>
-                <td>${data.username}</td>
-                <td>${data.email}</td>
-                <td>
-                  ${data.address.street},
-                  ${data.address.suite}, 
-                  ${data.address.city}
-                 </td>
-                <td>${data.company.name}</td>
-              </tr>`;
-  });
-  return table;
+const getData = (url, cb)=> {
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            document.getElementById('data').innerHTML = '';
+            return cb(JSON.parse(xhr.responseText));
+        }
+    };
+    xhr.open('GET', url);
+    xhr.send();
 }
+
+const data = ()=> {
+    getData('https://jsonplaceholder.typicode.com/users', (data)=> {
+        data.forEach( (element) => {
+            document.getElementById('data').innerHTML += `<tr> 
+                                                            <th>${element.id}</th> 
+                                                            <td>${element.name}</td>
+                                                            <td>${element.username}</td> 
+                                                            <td>${element.email}</td> 
+                                                            <td>${element.address.street}, ${element.address.suite}, ${element.address.city}</td> <td>${element.company.name}</td> 
+                                                            </tr>`;
+        });
+        });
+}
+
+data();
 
 function loading() {
   return `<tr>
