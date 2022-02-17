@@ -1,7 +1,5 @@
-var apikey = "c8b4d2db52eb4cdf99973089bf534f0a";
 fetch(
-  "https://newsapi.org/v2/top-headlines?country=id&apiKey=" +
-    apikey
+  "https://newsapi.org/v2/top-headlines?country=us&apiKey=c8b4d2db52eb4cdf99973089bf534f0a"
 )
   .then(function (response) {
     return response.json();
@@ -12,7 +10,7 @@ fetch(
   .then(function (data) {
     $(".news").append("<h1>Headlines</h1>");
     for (var i = 0; i < 20; i++) {
-      if(data[i].urlToImage == null || data[i].content == null) {
+      if (data[i].urlToImage == null || data[i].content == null) {
         continue;
       }
       console.log(i);
